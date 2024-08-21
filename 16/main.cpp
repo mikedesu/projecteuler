@@ -5,18 +5,33 @@
 
 using std::cout;
 using std::endl;
+using std::pow;
 using std::sqrt;
 using std::string;
 using std::to_string;
 using std::vector;
 
-bool is_prime(unsigned long int n);
+// bool is_prime(unsigned long int n);
 
 int main() {
   cout << "evildojo " << endl;
+
+  long double n = powl(2, 1000);
+  string s = to_string(n);
+  unsigned int sum = 0;
+  unsigned int index = s.find('.');
+  for (int i = 0; i < index; i++) {
+    unsigned int v = s[i] - '0';
+    sum += v;
+  }
+  cout.precision(100000);
+  cout << n << endl;
+  cout << sum << endl;
+
   return 0;
 }
 
+/*
 bool is_prime(unsigned long int n) {
   if (n < 2) {
     return false;
@@ -30,3 +45,4 @@ bool is_prime(unsigned long int n) {
   }
   return true;
 }
+*/
